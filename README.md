@@ -1,7 +1,8 @@
 # Sexual Health Hub Documentation
 
 ## Design Decisions
-The Sexual Health Hub is designed as a Django web application to provide accessible sexual and reproductive health education, consultation, and product information to users. The use of Django allows for robust backend development, while Bootstrap is used for responsive frontend design.
+The Sexual Health Hub a Django web application to provide accessible sexual and reproductive health education, consultation, and product information to users. 
+The use of Django allows for robust backend development, while Bootstrap and CSS is used for responsive frontend design.
 
 ## Technologies Used
 - Django 3.2
