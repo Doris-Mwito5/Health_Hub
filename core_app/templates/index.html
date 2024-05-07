@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<style>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.hero {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+}
+
+.btn-primary:hover {
+    background-color: #1f6698;
+    border-color: #1f6698;
+}
+
+.about-section, .services-section, .interactive-section {
+    padding: 30px 0;
+}
+
+.services-section h2, .interactive-section h2 {
+    margin-bottom: 30px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.card-text {
+    font-size: 1.2rem;
+}
+
+footer {
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+}
+
+footer a {
+    color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-section, .services-section, .interactive-section {
+        padding: 50px 0;
+    }
+
+    .card {
+        margin-bottom: 40px;
+    }
+}
+
+/* Additional Styles for Specific Elements */
+
+/* Interactive Section Form Styles */
+.input-group {
+    margin-bottom: 20px;
+}
+
+/* Interactive Section Button Styles */
+.btn-outline-primary {
+    border-color: #2980b9;
+    color: #2980b9;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+</style>
+<section class="hero text-center text-white">
+    <div class="container py-1">
+        <h1 class="display-3 mb-4">Empowering Your Sexual Health</h1>
+        <p class="lead mb-4">Expert education, consultation, and products delivered discreetly.</p>
+        <a href="{% url 'info' %}" class="btn btn-primary btn-lg">Learn More</a>
+    </div>
+    
+</section>
+
+
+
+<section class="services-section bg-light">
+    <div class="container py-1">
+        <h2 class="text-center mb-5">Why Choose Us?</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center border-0">
+                    <div class="card-body">
+                        <i class="bi bi-chat-dots fs-3 mb-3 text-primary"></i>
+                        <h3 class="card-title">Expert Consultation</h3>
+                        <p class="card-text">Book virtual consultations with experienced healthcare professionals.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center border-0">
+                    <div class="card-body">
+                        <i class="bi bi-journal-text fs-3 mb-3 text-primary"></i>
+                        <h3 class="card-title">Comprehensive Education</h3>
+                        <p class="card-text">Access a wealth of resources including articles, webinars, and guides.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center border-0">
+                    <div class="card-body">
+                        <i class="bi bi-journal-text fs-3 mb-3 text-primary"></i>
+                        <h3 class="card-title">Discreet Product Delivery</h3>
+                        <p class="card-text">Shop for sexual health products and have them delivered discreetly to you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="interactive-section bg-light py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Explore and Engage</h2>
+        <p class="lead mb-4">Discover our platform's interactive features designed to enhance your sexual health journey.</p>
+        
+        <!-- Button to Toggle Consultation Booking Form -->
+        <a href="{% url 'consultation' %}"><button id="showFormButton" class="btn btn-primary">Book an Appointment</button></a>
+        
+    </div>
+</section>
+
+{% endblock %}

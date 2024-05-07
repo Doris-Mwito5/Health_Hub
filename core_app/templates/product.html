@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Product List</h3>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="productTable">
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Description</th>
+                                    <th>Price (USD)</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for product in products %}
+                                <tr>
+                                    <td>{{ product.name }}</td>
+                                    <td>{{ product.description }}</td>
+                                    <td>{{ product.price }}</td>
+                                    <td>{% if product.sold %}Sold{% else %}Available{% endif %}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-danger" onclick="markAsSold('{{ product.id }}')">Mark as Sold</button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr>
+                    <h4>Add New Product</h4>
+                    <form id="addProductForm">
+                        <div class="form-group">
+                            <label for="productName">Product Name</label>
+                            <input type="text" class="form-control" id="productName" name="productName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productDescription">Description</label>
+                            <textarea class="form-control" id="productDescription" name="productDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="productPrice">Price (USD)</label>
+                            <input type="number" class="form-control" id="productPrice" name="productPrice" step="0.01" min="0" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript function to mark product as sold
+    function markAsSold(productId) {
+        // Perform an AJAX request to update the product status in the backend
+        // Example: You can use jQuery or plain JavaScript for AJAX
+        console.log('Marking product as sold:', productId);
+        // Add your AJAX code here to update the product status
+        alert('Product marked as sold!');
+    }
+
+    // JavaScript function to handle form submission for adding a new product
+    document.getElementById('addProductForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        // Retrieve form data
+        const productName = document.getElementById('productName').value;
+        const productDescription = document.getElementById('productDescription').value;
+        const productPrice = document.getElementById('productPrice').value;
+
+        // Perform an AJAX request to add the new product to the backend
+        // Example: You can use jQuery or plain JavaScript for AJAX
+        console.log('Adding new product:', productName, productDescription, productPrice);
+        // Add your AJAX code here to send form data to the backend and handle the response
+        alert('New product added successfully!');
+    });
+</script>
+{% endblock %}
