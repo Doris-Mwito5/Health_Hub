@@ -13,13 +13,14 @@ The use of Django allows for robust backend development, while Bootstrap and CSS
 ## Instructions for Local Setup
 1. Install Python 
 2. Clone the repository:
-3. git clone https://github.com/Doris-Mwito5/Health_Hub/tree/development
-4.Navigate to the project directory:
-5.Install dependencies
-pip install -r requirements.txt
-6.Apply migrations
-python manage.py makemigrateions
-python manage.py migrate
-7.Run the server
-python manage.py runserver
-8.Access the application at http://localhost:8000/
+  git clone https://github.com/Doris-Mwito5/Health_Hub/tree/development
+3. Navigate to the project directory:
+4. Install dependencies:
+   pip install -r requirements.txt
+5. Apply migrations:
+   python manage.py makemigrations
+   python manage.py migrate
+6. Run the development server:
+   python manage.py runserver
+7. Access the application at http://localhost:8000/
+
