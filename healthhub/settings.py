@@ -12,23 +12,24 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+from dotenv import load_dotenv
+import environ
+
+
+load_dotenv()
+
+env = environ.Env()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SECRET_KEY = env("DJANGO_SECRET_KEY")
+# 'django-insecure-c5(z291n(xtx!l23ncp2s$q*6uw#_xv5s$l)lxrq=$ibp&*%d_'
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c5(z291n(xtx!l23ncp2s$q*6uw#_xv5s$l)lxrq=$ibp&*%d_'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = "DJANGO_DEBUG"
 ALLOWED_HOSTS = ["*"]
 
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -80,11 +81,11 @@ WSGI_APPLICATION = 'healthhub.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'health',
-        'USER': 'root',
-        'PASSWORD': '@Kawira123',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'NAME': env("DJANGO_DB_NAME"),
+        'USER': env("DJANGO_DB_USER"),
+        'PASSWORD': env("DJANGO_DB_PASSWORD"),
+        'HOST': env("DJANGO_DB_HOST"),
+        'PORT': env("DJANGO_DB_PORT"),
     }
 }
 
