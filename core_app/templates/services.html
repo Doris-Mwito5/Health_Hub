@@ -4,7 +4,6 @@
 
 {% block content %}
 <style>
- /* style.css */
 
 body {
     font-family: Arial, sans-serif;
@@ -113,16 +112,13 @@ body {
                 <h2>Consultations with Healthcare Professionals</h2>
                 <p>Get personalized consultations with experienced healthcare professionals specializing in sexual health.</p>
                 <a href="{% url 'consultation' %}"><button type="button" class="btn btn-primary btn-lg shadow-sm p-3 mb-5 mt=3">Request Consultation</button></center></a>
-                {% comment %} <a href="{% url 'consultation' %}"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#consultationModal">Request Consultation</button></a> {% endcomment %}
+               
             </div>
         </div>
-
-        <!-- Add more service items as needed -->
 
     </div>
 </section>
 
-<!-- Consultation Modal -->
 <div class="modal fade" id="consultationModal" tabindex="-1" role="dialog" aria-labelledby="consultationModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -133,7 +129,6 @@ body {
                 </button>
             </div>
             <div class="modal-body">
-                <!-- Load consultation form dynamically -->
                 <div id="consultationFormContainer"></div>
             </div>
         </div>

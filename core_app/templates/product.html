@@ -62,28 +62,18 @@
 </div>
 
 <script>
-    // JavaScript function to mark product as sold
+    
     function markAsSold(productId) {
-        // Perform an AJAX request to update the product status in the backend
-        // Example: You can use jQuery or plain JavaScript for AJAX
         console.log('Marking product as sold:', productId);
-        // Add your AJAX code here to update the product status
         alert('Product marked as sold!');
     }
-
-    // JavaScript function to handle form submission for adding a new product
     document.getElementById('addProductForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission behavior
-
-        // Retrieve form data
+        event.preventDefault(); 
         const productName = document.getElementById('productName').value;
         const productDescription = document.getElementById('productDescription').value;
         const productPrice = document.getElementById('productPrice').value;
 
-        // Perform an AJAX request to add the new product to the backend
-        // Example: You can use jQuery or plain JavaScript for AJAX
         console.log('Adding new product:', productName, productDescription, productPrice);
-        // Add your AJAX code here to send form data to the backend and handle the response
         alert('New product added successfully!');
     });
 </script>

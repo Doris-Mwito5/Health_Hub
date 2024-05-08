@@ -19,13 +19,6 @@ def services(request):
 def consultation(request):
     return render(request, 'consultation.html')
 
-def search(request):
-    query = request.GET.get('q', '')
-    context = {
-        'query': query,
-    }
-    return render(request, 'search_results.html', context)
-
 def info(request):
     return render(request, 'info.html')
 
@@ -34,10 +27,6 @@ def contact(request):
 
 def product(request):
     return render(request, 'product.html')
-
-# core/views.py
-
-from django.shortcuts import render
 
 def about_us(request):
     context = {
